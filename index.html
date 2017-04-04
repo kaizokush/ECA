@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/master.css">
+	<title>Home page</title>
+</head>
+<body>
+	<div class="body">
+		<div class="banner">
+			<h2>Ujjwal's ECA Assignments</h2>
+		</div>
+		<div class="menu">
+			<ul>
+				<li><a href="">Home</a></li>
+				<div class="dropdown">
+				<li>
+					<a href="">
+						Services
+					</a>
+				</li>
+					<div class="dropdown-service">
+						<ul>
+							<li>Register</li>
+							<li>Service 2</li>
+						</ul>
+					</div>
+				</div>
+				<li><a href="">Contact</a></li>
+				<li><a href="">About</a></li>
+			</ul>
+		</div>
+		<div class="container">
+			<div class="sidebar">
+				Archives
+			</div>
+			<div class="content">
+				<form name="reg">
+					<h3>Please fill the registration form below:</h3><br>
+					Name:<input type="text" name="name"><br>
+					Address: <input type="text" name="address"><br>
+					Phone No: <input type="text" name="contactno"><br>
+					<input type="button" value="Register" name="submit_btn" onclick="register()">	
+				</form>
+				<br>
+				<h3>Registered:</h3>
+				<table border="1" id="details">
+					<tr>
+						<th>Name</th>
+						<th>Address</th>
+						<th>Phone Number</th>
+						<th>Edit</th>
+					</tr>
+				</table>
+			</div>
+			<br>
+		</div>
+		<div class="footer">
+			Copyright &copy; Ujjwal Shakya
+		</div>
+	</div>
+	<script type="text/javascript">
+		function validate()
+		{
+
+		}
+		function register()
+		{
+			var name = document.reg.name.value;
+			var address = document.reg.address.value;
+			var contactno = document.reg.contactno.value;
+			var myTable = document.getElementById("details");
+       		var existingHtml = myTable.innerHTML;
+
+        	var newHtml = '<tr><td>' + name + '</td><td>' + address + '</td><td>' + contactno + '</td><td>'+'<input type="button" value="Edit"></td></tr>';
+        	myTable.innerHTML = existingHtml + newHtml;	
+
+			alert("Registered!");
+		}
+	</script>
+</body>
+</html>
